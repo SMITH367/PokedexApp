@@ -1,0 +1,35 @@
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(255, 33, 33);
+
+}
+
+.header-nav-list {
+    display: flex;
+    list-style: none;
+
+}
+
+.header-nav-el {
+    margin: 10px;
+    padding:10px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+
+img {
+    width: 70%;
+}
+
+
+@media (max-width: 600px) {
+    .header nav {
+        display: none;
+
+    }
+}
