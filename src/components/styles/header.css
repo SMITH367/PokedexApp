@@ -4,6 +4,7 @@
     justify-content: space-around;
     align-items: center;
     background: rgb(255, 33, 33);
+    font-weight:bold;
 
 }
 
@@ -27,9 +28,11 @@ img {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 720px) {
+    .header{
+        text-align: center;
+    }
     .header nav {
         display: none;
-
     }
 }

@@ -1,7 +1,11 @@
 .footer {
-    margin-top:50px;
-    background: rgb(247, 247, 247);
+    margin-top:65px;
+    background: rgb(255, 253, 222);
     padding:2em;
     text-align: center;
 
+}
+
+.footer a {
+    color:rgb(255, 0, 0);
 }
