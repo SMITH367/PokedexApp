@@ -1,0 +1,27 @@
+
+.pokemon-card {
+    margin-top:2em;
+    min-height: 120px;
+}
+
+.container {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    border:solid red 1px;
+    height: 100%;
+}
+
+.img-pkm {
+    width:30%;
+}
+
+@media (max-width: 720px) {
+  .container {
+      width: 100%;
+  }
+  .img-pkm {
+      width: 70%;
+  }
+
+}

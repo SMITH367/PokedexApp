@@ -18,7 +18,7 @@ const Home = () => {
         </article>
         <article>
           <h1 className="title-home">Bienvenido a pokeapi</h1>
-          <p class="center">Encuentra la informacion de tus pokemon favoritos</p>
+          <p className="center">Encuentra la informacion de tus pokemon favoritos</p>
 
           <div className="center">
             <Link to="/search">

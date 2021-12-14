@@ -4,7 +4,7 @@ const Button = (props) => {
 
     return (
         <>
-            <button className={props.classNames} >{props.contentText}</button>
+            <button className={props.classNames} onClick={props.event}>{props.contentText}</button>
         </>
     )
 
