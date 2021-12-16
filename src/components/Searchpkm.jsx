@@ -86,7 +86,7 @@ const Searchpkm = () => {
           </form>
         </article>
 
-        <article className="center">
+        <article>
           <RenderPkmData data={dataPokemonByIdName[0]} />
         </article>
       </section>

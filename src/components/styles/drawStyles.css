@@ -1,0 +1,24 @@
+.typeContent {
+    color: aliceblue;
+    font-weight: bolder;
+    padding: 3px;
+    width: 40%;
+    margin: 4px auto;
+}
+
+.green {
+    color: rgb(116, 255, 97)
+}
+
+.blue {
+    color: rgb(62, 226, 255)
+}
+
+.red {
+    color: rgb(255, 94, 19)
+}
+
+
+.silver {
+    color:rgb(129, 129, 129);
+}
