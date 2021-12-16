@@ -1,7 +1,6 @@
 .pokemon-card {
-    margin-top: 2em;
-    min-height: 150px;
-
+    margin-top: 1em;
+    min-height: 130px;
 }
 
 .container {
@@ -21,24 +20,25 @@
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    padding:10px;
-    
+    padding: 10px;
+
 }
+
 .show-data li {
     list-style: none;
 }
-.show-data aside{
+
+.show-data aside {
     width: 50%;
-    margin-top:10px;
+    margin-top: 10px;
 }
+
 .stats {
     font-weight: bolder;
 }
+
 .img-pkm {
     width: 40%;
-}
-.moves {
-    margin-top: 1em;
 }
 
 
@@ -50,5 +50,10 @@
     .show-data {
         width: 100%;
     }
+
+    .img-pkm {
+        width: 35%;
+    }
+
 
 }
