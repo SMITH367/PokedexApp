@@ -1,5 +1,5 @@
 const lengthValidation = (string) => {
-
+    
     return string.length > 0
     
 }

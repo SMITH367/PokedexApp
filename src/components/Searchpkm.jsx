@@ -11,11 +11,15 @@ import "./styles/searchPkm.css";
 const Searchpkm = () => {
  
   const [pokemonToSearchName, setpokemonToSearchName] = useState("");
-   const [pokemonToSearchId, setpokemonToSearchId] = useState("");
+  const [pokemonToSearchId, setpokemonToSearchId] = useState("");
   const [dataPokemonByIdName, setdataPokemonByIdName] = useState([[]]);
 
-  const SearchPkmById = async (e, pokemonToSearchId) => {
+
+  
+
+  const SearchPkmById = async  (e, pokemonToSearchId) => {
     e.preventDefault();
+    console.log(pokemonToSearchId)
     if (lengthValidation(pokemonToSearchId)) {
       if (rangeValidation(pokemonToSearchId)) {
         const url = `https://pokeapi.co/api/v2/pokemon/${pokemonToSearchId}`;
@@ -50,6 +54,12 @@ const Searchpkm = () => {
     
   };
 
+  const searchRamdom = (e) => {
+    let idRamdom = String(Math.floor(Math.random() * (899 - 1)) + 1);
+    console.log(idRamdom)
+    SearchPkmById(e, idRamdom)
+    
+  }
   return (
     <>
       <Header />
@@ -81,6 +91,13 @@ const Searchpkm = () => {
                 event={(e) => SearchPkmById(e, pokemonToSearchId)}
                 classNames="buttonSearch"
                 contentText=" 🔍 "
+              ></Button>
+            </div>
+            <div>
+              <Button
+                event={(e) => searchRamdom(e)}
+                classNames="buttonSearch"
+                contentText="¡Sorprendeme!"
               ></Button>
             </div>
           </form>
