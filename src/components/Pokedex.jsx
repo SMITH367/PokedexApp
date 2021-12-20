@@ -32,7 +32,7 @@ const Pokedex = () => {
       <Header />
       <div className="main-pokedex">
         {pokemons.length > 0 ? (
-          <>
+          <div>
             <div>
               <label htmlFor="selecGeneration">Filtrar por region</label>
               <select
@@ -66,7 +66,7 @@ const Pokedex = () => {
               ))}
               <Footer />
             </div>
-          </>
+          </div>
         ) : (
           <div className="charging center">
             <img src={charingPika} className="charging-img" alt="" />
