@@ -1,6 +1,55 @@
-.pokemon-container {
-    width: 300px;
-    height: 200px;
+.pokemons-cont {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 200px;
     color: aliceblue;
+    margin: auto;
+
+}
+
+.pokemon-dex {
+    width: 15%;
+    margin: 2% auto;
+    padding-bottom: 2em;
     background-color: rgb(12, 18, 73);
+    border: solid 1px;
+    border-radius: 1em;
+
+}
+
+.img-pokemon-dex {
+    width: 70%;
+}
+
+.charging {
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+}
+
+.charging-img {
+    width: 20%;
+    margin: auto;
+}
+
+.charging-text {
+    font-size: 2em;
+    font-weight: bolder;
+}
+
+@media (max-width: 720px) {
+
+    .pokemon-dex {
+        width: 30%;
+    }
+
+    .img-pokemon-dex {
+        width: 100%;
+    }
+
+    .charging-img {
+        width: 50%;
+    }
+
 }

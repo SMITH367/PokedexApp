@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { GetApi } from "../services/GetApi";
+import { ChangeRegion } from "../services/ChangeRegion";
 import { Header } from "./UI components/Header";
 import { Footer } from "./UI components/Footer";
 import "./styles/pokedex.css";
+import charingPika from "./sources/charchingpikachu.gif";
+
 const Pokedex = () => {
   let url = "https://pokeapi.co/api/v2/";
 
@@ -24,62 +27,53 @@ const Pokedex = () => {
     // eslint-disable-next-line
   }, []);
 
-  const cambio = async (value) => {
-    setPokemons([]);
-    if (value === "kanto") {
-      let dataKanto = await GetApi(url + "pokemon/?offset=0&limit=151");
-
-      let kantoPokemons = [];
-
-      for (let i = 0; i < Object.keys(dataKanto[0].results).length; i++) {
-        let pokemonKantoData = await GetApi(dataKanto[0].results[i].url);
-        kantoPokemons.push(pokemonKantoData[0]);
-      }
-      setPokemons(kantoPokemons);
-    } else if (value === "jhoto") {
-      let dataJhoto = await GetApi(url + "pokemon/?offset=151&limit=100");
-      let jhotoPokemons = [];
-
-      for (let i = 0; i < Object.keys(dataJhoto[0].results).length; i++) {
-        let pokemonJhotoData = await GetApi(dataJhoto[0].results[i].url);
-        jhotoPokemons.push(pokemonJhotoData[0]);
-      }
-      setPokemons(jhotoPokemons);
-    }
-  };
-
   return (
     <>
       <Header />
-
-      <section className="main-pokedex">
-        <select
-          name="selectGeneration"
-          id="selectGeneration"
-          onChange={(e) => cambio(e.target.value)}
-        >
-          <option value="kanto">Kanto</option>
-
-          <option value="jhoto">Jhoto</option>
-        </select>
+      <div className="main-pokedex">
         {pokemons.length > 0 ? (
-          <div className="pokemons-container">
-            <ul>
+          <>
+            <div>
+              <label htmlFor="selecGeneration">Filtrar por region</label>
+              <select
+                name="selectGeneration"
+                id="selectGeneration"
+                onChange={(e) => ChangeRegion(e.target.value, setPokemons, url)}
+              >
+                <option value="">---</option>
+                <option value="kanto">Kanto</option>
+                <option value="jhoto">Johto</option>
+                <option value="hoenn">Hoen</option>
+                <option value="sinnoh">Sinnoh</option>
+                <option value="unova">Teselia</option>
+                <option value="kalos">Kalos</option>
+                <option value="alola">Alola</option>
+                <option value="galar">Galar</option>
+              </select>
+            </div>
+            <div className="pokemons-cont center">
               {pokemons.map((pokemon, id) => (
-                <li key={id}>
-                  <div className="pokemon-container">
-                    <img src={pokemon.sprites.front_default} alt="" />{" "}
+                <div className="pokemon-dex center" key={id}>
+                  <div>
+                    <img
+                      src={pokemon.sprites.front_default}
+                      alt=""
+                      className="img-pokemon-dex"
+                    />
+                    <p>{pokemon.name}</p>
                   </div>
-                </li>
+                </div>
               ))}
-            </ul>
-          </div>
+              <Footer />
+            </div>
+          </>
         ) : (
-          <h2 className="center">Cargando...</h2>
+          <div className="charging center">
+            <img src={charingPika} className="charging-img" alt="" />
+            <p className="charging-text">Cargando...</p>
+          </div>
         )}
-      </section>
-
-      <Footer />
+      </div>
     </>
   );
 };
