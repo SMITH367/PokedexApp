@@ -62,6 +62,8 @@ const Pokedex = () => {
                       className="img-pokemon-dex"
                     />
                     <p>{pokemon.name}</p>
+                  </div>
+                  <div className="toview-cont">
                     <Link to={`/viewpkm/${pokemon.id}`} className="goToview">
                       Ver
                     </Link>

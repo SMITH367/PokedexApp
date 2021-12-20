@@ -2,7 +2,7 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    max-height: 200px;
+    max-height: 300px;
     color: aliceblue;
     margin: auto;
 
@@ -38,13 +38,17 @@
     font-weight: bolder;
 }
 
-.goToview {
+.toview-cont {
+    padding-top: 1em;
+}
 
-    text-decoration: none;
-    padding: 2px;
-    color: aliceblue;
+.goToview {
+    color: black;
+    background-color: #fff;
+    padding: 4px;
     border: solid 1px;
-    background-color: rgb(6, 3, 58);
+    border-radius: 6px;
+    text-decoration: none;
 
 }
 
