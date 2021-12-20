@@ -77,7 +77,7 @@ const ChangeRegion = async (value, setPokemons, url) => {
         setPokemons(alolaPokemons);
     } else if (value === "galar") {
         let dataGalar = await GetApi(url + "pokemon/?offset=809&limit=410");
-
+        console.log(dataGalar)
         let galarPokemons = [];
 
         for (let i = 0; i < Object.keys(dataGalar[0].results).length; i++) {

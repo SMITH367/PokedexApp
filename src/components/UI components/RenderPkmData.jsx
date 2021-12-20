@@ -1,26 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/renderPkmData.css";
 import "../styles/drawStyles.css";
-import {PaintTypes} from "./UI services/PaintTypes"
-
+import { PaintTypes } from "./UI services/PaintTypes";
 
 const RenderPkmData = ({ data }) => {
   const containerRef = useRef();
 
   const type1 = useRef();
   const type2 = useRef();
-  
 
   useEffect(() => {
     if (Object.keys(data).length > 1) {
-  
-      PaintTypes(
-        containerRef,
-        type1,
-        type2,
-        data.types,
-        data.types.length
-      );
+      PaintTypes(containerRef, type1, type2, data.types, data.types.length);
     }
     // eslint-disable-next-line
   }, [data]);
@@ -35,7 +26,7 @@ const RenderPkmData = ({ data }) => {
                 {data.name} #{data.id}
               </h2>
               <img
-                src={`https://img.pokemondb.net/sprites/home/normal/${data.name}.png`}
+                src={`${data.sprites.front_default}`}
                 alt=""
                 className="img-pkm"
               />
