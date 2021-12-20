@@ -9,7 +9,7 @@
     border: solid red 7px;
     border-radius: 10px;
     height: 100%;
-    padding:10px;
+    padding: 10px;
     color: rgb(26, 26, 31);
 
 }
@@ -31,7 +31,7 @@
 
 .show-data aside {
     width: 50%;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 .stats {

@@ -38,6 +38,16 @@
     font-weight: bolder;
 }
 
+.goToview {
+
+    text-decoration: none;
+    padding: 2px;
+    color: aliceblue;
+    border: solid 1px;
+    background-color: rgb(6, 3, 58);
+
+}
+
 @media (max-width: 720px) {
 
     .pokemon-dex {

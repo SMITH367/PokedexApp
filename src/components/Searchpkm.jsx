@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { RenderPkmData } from "./UI components/RenderPkmData";
 import { GetApi } from "../services/GetApi";
-import { lengthValidation, rangeValidation } from "../services/Validations";
+import { lengthValidation } from "../services/Validations";
 import { Button } from "./UI components/Button";
 import { Header } from "./UI components/Header";
 import { Footer } from "./UI components/Footer";
@@ -9,32 +9,25 @@ import { Footer } from "./UI components/Footer";
 import "./styles/searchPkm.css";
 
 const Searchpkm = () => {
- 
   const [pokemonToSearchName, setpokemonToSearchName] = useState("");
   const [pokemonToSearchId, setpokemonToSearchId] = useState("");
   const [dataPokemonByIdName, setdataPokemonByIdName] = useState([[]]);
 
-
-  
-
-  const SearchPkmById = async  (e, pokemonToSearchId) => {
+  const SearchPkmById = async (e, pokemonToSearchId) => {
     e.preventDefault();
-    console.log(pokemonToSearchId)
+    console.log(pokemonToSearchId);
     if (lengthValidation(pokemonToSearchId)) {
-      if (rangeValidation(pokemonToSearchId)) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${pokemonToSearchId}`;
-        const datapkm = await GetApi(url);
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokemonToSearchId}`;
+      const datapkm = await GetApi(url);
 
-        try {
-          if (datapkm[1] === null) setdataPokemonByIdName([datapkm[0]]);
-          else setdataPokemonByIdName([]);
-        } catch (err) {
-          console.log(err);
-          alert("Pokemon no encontrado");
-        }
-
-      } else alert("Pokemon fuera del rango de existentes")
-    } else alert("No puedes ingresar campos vacios")
+      try {
+        if (datapkm[1] === null) setdataPokemonByIdName([datapkm[0]]);
+        else setdataPokemonByIdName([]);
+      } catch (err) {
+        console.log(err);
+        alert("Pokemon no encontrado");
+      }
+    } else alert("No puedes ingresar campos vacios");
   };
   const SearchPkmByName = async (e, pokemonToSearchName) => {
     e.preventDefault();
@@ -49,17 +42,14 @@ const Searchpkm = () => {
         console.log(err);
         alert("Pokemon no encontrado");
       }
-    } else 
-      alert("No puedes ingresar campos vacios");
-    
+    } else alert("No puedes ingresar campos vacios");
   };
 
   const searchRamdom = (e) => {
     let idRamdom = String(Math.floor(Math.random() * (899 - 1)) + 1);
-    console.log(idRamdom)
-    SearchPkmById(e, idRamdom)
-    
-  }
+    console.log(idRamdom);
+    SearchPkmById(e, idRamdom);
+  };
   return (
     <>
       <Header />

@@ -3,6 +3,7 @@ import { GetApi } from "../services/GetApi";
 import { ChangeRegion } from "../services/ChangeRegion";
 import { Header } from "./UI components/Header";
 import { Footer } from "./UI components/Footer";
+import { Link } from "react-router-dom";
 import "./styles/pokedex.css";
 import charingPika from "./sources/charchingpikachu.gif";
 
@@ -61,6 +62,9 @@ const Pokedex = () => {
                       className="img-pokemon-dex"
                     />
                     <p>{pokemon.name}</p>
+                    <Link to={`/viewpkm/${pokemon.id}`} className="goToview">
+                      Ver
+                    </Link>
                   </div>
                 </div>
               ))}
