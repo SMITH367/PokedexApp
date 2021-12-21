@@ -4,7 +4,7 @@
     justify-content: space-around;
     align-items: center;
     background: rgb(255, 33, 33);
-    font-weight:bold;
+    font-weight: bold;
 
 }
 
@@ -16,7 +16,7 @@
 
 .header-nav-el {
     margin: 10px;
-    padding:10px;
+    padding: 10px;
     text-decoration: none;
     color: #fff;
     font-size: 1.2em;
@@ -29,10 +29,11 @@ img {
 
 
 @media (max-width: 720px) {
-    .header{
+    .header {
         text-align: center;
-        height: 75px;
+        height: 12vh;
     }
+
     .header nav {
         display: none;
     }

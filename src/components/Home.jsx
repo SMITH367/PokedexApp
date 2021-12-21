@@ -16,8 +16,8 @@ const Home = () => {
         </article>
         <article>
           <h1 className="title-home">Bienvenido a pokeapi</h1>
-          <p className="center">
-            Encuentra la informacion de tus pokemon favoritos
+          <p className="center call-to-act">
+            ¡Encuentra la informacion de tus pokemon favoritos!
           </p>
 
           <div className="center">
