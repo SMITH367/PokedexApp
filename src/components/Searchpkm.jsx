@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { RenderPkmData } from "./UI components/RenderPkmData";
+import { RenderPkmData } from "./UIcomponents/RenderPkmData";
 import { GetApi } from "../services/GetApi";
 import { lengthValidation } from "../services/Validations";
-import { Button } from "./UI components/Button";
-import { Header } from "./UI components/Header";
-import { Footer } from "./UI components/Footer";
+import { Button } from "./UIcomponents/Button";
+import { Header } from "./UIcomponents/Header";
+import { Footer } from "./UIcomponents/Footer";
 
 import "./styles/searchPkm.css";
 

@@ -1,16 +1,14 @@
 import React from "react";
-import { Header } from "./UI components/Header";
-import { Footer } from "./UI components/Footer";
-import { Button } from "./UI components/Button";
+import { Header } from "./UIcomponents/Header";
+import { Footer } from "./UIcomponents/Footer";
+import { Button } from "./UIcomponents/Button";
 import { Link } from "react-router-dom";
-import './styles/home.css'
-import pikachuHome from './sources/pikachuHome.png'
-
+import "./styles/home.css";
+import pikachuHome from "./sources/pikachuHome.png";
 
 const Home = () => {
   return (
     <>
-      
       <Header />
       <section className="main-home">
         <article className="home-logo-cont center">
@@ -18,7 +16,9 @@ const Home = () => {
         </article>
         <article>
           <h1 className="title-home">Bienvenido a pokeapi</h1>
-          <p className="center">Encuentra la informacion de tus pokemon favoritos</p>
+          <p className="center">
+            Encuentra la informacion de tus pokemon favoritos
+          </p>
 
           <div className="center">
             <Link to="/search">

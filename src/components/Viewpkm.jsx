@@ -1,6 +1,6 @@
 import React from "react";
-import { Header } from "./UI components/Header";
-import { Footer } from "./UI components/Footer";
+import { Header } from "./UIcomponents/Header";
+import { Footer } from "./UIcomponents/Footer";
 import { GetPokemonId } from "../services/GetPokemonId";
 import { useLocation } from "react-router-dom";
 

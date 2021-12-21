@@ -14,6 +14,7 @@ const Pokedex = () => {
   let url = "https://pokeapi.co/api/v2/";
 
   const [pokemons, setPokemons] = useState([]);
+  const [pokemonsToOrder, setPokemonsToOrder] = useState([]);
 
   useEffect(() => {
     const pokemonsFirstView = async () => {
@@ -30,6 +31,11 @@ const Pokedex = () => {
     pokemonsFirstView();
     // eslint-disable-next-line
   }, []);
+
+  const orderAZ = (e) => {
+    e.preventDefault();
+    console.log("hola");
+  };
 
   return (
     <>
@@ -90,6 +96,11 @@ const Pokedex = () => {
                   <option value="dark">Siniestro</option>
                 </select>
               </div>
+              <Button
+                contentText="AZ"
+                classNames="az-btn"
+                event={(e) => orderAZ(e)}
+              ></Button>
             </form>
             <div className="pokemons-cont center">
               {pokemons.map((pokemon, id) => (
@@ -112,9 +123,9 @@ const Pokedex = () => {
                       Ver
                     </Link>
                   </div>
-                  <Button></Button>
                 </div>
               ))}
+
               <Footer />
             </div>
           </div>
