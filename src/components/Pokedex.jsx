@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { GetApi } from "../services/GetApi";
 import { ChangeRegion } from "../services/ChangeRegion";
-import { Header } from "./UI components/Header";
-import { Footer } from "./UI components/Footer";
+import { FilterByTipe } from "../services/FilterByType";
+import { Header } from "./UIcomponents/Header";
+import { Footer } from "./UIcomponents/Footer";
+import { Button } from "./UIcomponents/Button";
 import { Link } from "react-router-dom";
 import "./styles/pokedex.css";
+import { setBackground } from "./UIcomponents/UIservices/setBackground";
 import charingPika from "./sources/charchingpikachu.gif";
 
 const Pokedex = () => {
@@ -34,28 +37,69 @@ const Pokedex = () => {
       <div className="main-pokedex">
         {pokemons.length > 0 ? (
           <div>
-            <div>
-              <label htmlFor="selecGeneration">Filtrar por region</label>
-              <select
-                name="selectGeneration"
-                id="selectGeneration"
-                onChange={(e) => ChangeRegion(e.target.value, setPokemons, url)}
-              >
-                <option value="">---</option>
-                <option value="kanto">Kanto</option>
-                <option value="jhoto">Johto</option>
-                <option value="hoenn">Hoen</option>
-                <option value="sinnoh">Sinnoh</option>
-                <option value="unova">Teselia</option>
-                <option value="kalos">Kalos</option>
-                <option value="alola">Alola</option>
-                <option value="galar">Galar</option>
-              </select>
-            </div>
+            <h1 className="center">POKEDEX</h1>
+            <h2 className="center">Filtrar por</h2>
+            <form className="form-pokedex center">
+              <div>
+                <label htmlFor="selecGeneration">Region </label>
+                <select
+                  name="selectGeneration"
+                  id="selectGeneration"
+                  onChange={(e) =>
+                    ChangeRegion(e.target.value, setPokemons, url)
+                  }
+                  className="select-css"
+                >
+                  <option value="">---</option>
+                  <option value="kanto">Kanto</option>
+                  <option value="jhoto">Johto</option>
+                  <option value="hoenn">Hoen</option>
+                  <option value="sinnoh">Sinnoh</option>
+                  <option value="unova">Teselia</option>
+                  <option value="kalos">Kalos</option>
+                  <option value="alola">Alola</option>
+                  <option value="galar">Galar</option>
+                </select>
+              </div>
+              <div>
+                <label htmlFor="selecGeneration">Tipo </label>
+                <select
+                  name="selectType"
+                  id="selectType"
+                  className="select-css"
+                  onChange={(e) => FilterByTipe(e.target.value, setPokemons)}
+                >
+                  <option value="">---</option>
+                  <option value="fire">Fuego</option>
+                  <option value="water">Agua</option>
+                  <option value="grass">Planta</option>
+                  <option value="normal">Normal</option>
+                  <option value="bug">Bicho</option>
+                  <option value="poison">Veneno</option>
+                  <option value="flying">Volador</option>
+                  <option value="psychic">Psiquico</option>
+                  <option value="fighting">Lucha</option>
+                  <option value="ice">Hielo</option>
+                  <option value="rock">Roca</option>
+                  <option value="fairy">Hada</option>
+                  <option value="ground">Tierra</option>
+                  <option value="steel">Acero</option>
+                  <option value="ghost">Fantansma</option>
+                  <option value="dragon">Dragon</option>
+                  <option value="electric">Electrico</option>
+                  <option value="dark">Siniestro</option>
+                </select>
+              </div>
+            </form>
             <div className="pokemons-cont center">
               {pokemons.map((pokemon, id) => (
-                <div className="pokemon-dex center" key={id}>
+                <div
+                  className="pokemon-dex center"
+                  key={id}
+                  onLoad={(e) => setBackground(pokemon.types[0].type.name, e)}
+                >
                   <div>
+                    <h3>#{pokemon.id}</h3>
                     <img
                       src={pokemon.sprites.front_default}
                       alt=""
@@ -68,6 +112,7 @@ const Pokedex = () => {
                       Ver
                     </Link>
                   </div>
+                  <Button></Button>
                 </div>
               ))}
               <Footer />

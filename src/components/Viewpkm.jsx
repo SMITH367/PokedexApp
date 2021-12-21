@@ -6,8 +6,7 @@ import { useLocation } from "react-router-dom";
 
 const Viewpkm = () => {
   let location = useLocation();
-  console.log(location.pathname);
-  console.log(GetPokemonId(location.pathname));
+
   return (
     <>
       <Header />

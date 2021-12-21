@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/renderPkmData.css";
 import "../styles/drawStyles.css";
-import { PaintTypes } from "./UI services/PaintTypes";
+import { PaintTypes } from "./UIservices/PaintTypes";
 
 const RenderPkmData = ({ data }) => {
   const containerRef = useRef();
