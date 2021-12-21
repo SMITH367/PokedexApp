@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { GetApi } from "../services/GetApi";
 import { ChangeRegion } from "../services/ChangeRegion";
 import { FilterByTipe } from "../services/FilterByType";
+import { OrderAZ } from "../services/OrderAZ";
+import { GetSpecialForms } from "../services/GetSpecialForms";
 import { Header } from "./UIcomponents/Header";
 import { Footer } from "./UIcomponents/Footer";
 import { Button } from "./UIcomponents/Button";
@@ -14,7 +16,7 @@ const Pokedex = () => {
   let url = "https://pokeapi.co/api/v2/";
 
   const [pokemons, setPokemons] = useState([]);
-  const [pokemonsToOrder, setPokemonsToOrder] = useState([]);
+  const [order, setOrder] = useState(false);
 
   useEffect(() => {
     const pokemonsFirstView = async () => {
@@ -32,11 +34,6 @@ const Pokedex = () => {
     // eslint-disable-next-line
   }, []);
 
-  const orderAZ = (e) => {
-    e.preventDefault();
-    console.log("hola");
-  };
-
   return (
     <>
       <Header />
@@ -46,60 +43,63 @@ const Pokedex = () => {
             <h1 className="center">POKEDEX</h1>
             <h2 className="center">Filtrar por</h2>
             <form className="form-pokedex center">
-              <div>
-                <label htmlFor="selecGeneration">Region </label>
-                <select
-                  name="selectGeneration"
-                  id="selectGeneration"
-                  onChange={(e) =>
-                    ChangeRegion(e.target.value, setPokemons, url)
-                  }
-                  className="select-css"
-                >
-                  <option value="">---</option>
-                  <option value="kanto">Kanto</option>
-                  <option value="jhoto">Johto</option>
-                  <option value="hoenn">Hoen</option>
-                  <option value="sinnoh">Sinnoh</option>
-                  <option value="unova">Teselia</option>
-                  <option value="kalos">Kalos</option>
-                  <option value="alola">Alola</option>
-                  <option value="galar">Galar</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="selecGeneration">Tipo </label>
-                <select
-                  name="selectType"
-                  id="selectType"
-                  className="select-css"
-                  onChange={(e) => FilterByTipe(e.target.value, setPokemons)}
-                >
-                  <option value="">---</option>
-                  <option value="fire">Fuego</option>
-                  <option value="water">Agua</option>
-                  <option value="grass">Planta</option>
-                  <option value="normal">Normal</option>
-                  <option value="bug">Bicho</option>
-                  <option value="poison">Veneno</option>
-                  <option value="flying">Volador</option>
-                  <option value="psychic">Psiquico</option>
-                  <option value="fighting">Lucha</option>
-                  <option value="ice">Hielo</option>
-                  <option value="rock">Roca</option>
-                  <option value="fairy">Hada</option>
-                  <option value="ground">Tierra</option>
-                  <option value="steel">Acero</option>
-                  <option value="ghost">Fantansma</option>
-                  <option value="dragon">Dragon</option>
-                  <option value="electric">Electrico</option>
-                  <option value="dark">Siniestro</option>
-                </select>
-              </div>
+              <select
+                name="selectGeneration"
+                id="selectGeneration"
+                onChange={(e) =>
+                  ChangeRegion(e.target.value, setPokemons, url, setOrder)
+                }
+                className="select-css"
+              >
+                <option value="">Region</option>
+                <option value="kanto">Kanto</option>
+                <option value="jhoto">Johto</option>
+                <option value="hoenn">Hoen</option>
+                <option value="sinnoh">Sinnoh</option>
+                <option value="unova">Teselia</option>
+                <option value="kalos">Kalos</option>
+                <option value="alola">Alola</option>
+                <option value="galar">Galar</option>
+              </select>
+
+              <select
+                name="selectType"
+                id="selectType"
+                className="select-css"
+                onChange={(e) =>
+                  FilterByTipe(e.target.value, setPokemons, setOrder)
+                }
+              >
+                <option value="">Tipo</option>
+                <option value="fire">Fuego</option>
+                <option value="water">Agua</option>
+                <option value="grass">Planta</option>
+                <option value="normal">Normal</option>
+                <option value="bug">Bicho</option>
+                <option value="poison">Veneno</option>
+                <option value="flying">Volador</option>
+                <option value="psychic">Psiquico</option>
+                <option value="fighting">Lucha</option>
+                <option value="ice">Hielo</option>
+                <option value="rock">Roca</option>
+                <option value="fairy">Hada</option>
+                <option value="ground">Tierra</option>
+                <option value="steel">Acero</option>
+                <option value="ghost">Fantansma</option>
+                <option value="dragon">Dragon</option>
+                <option value="electric">Electrico</option>
+                <option value="dark">Siniestro</option>
+              </select>
+
               <Button
-                contentText="AZ"
+                contentText="Ordenar AZ"
                 classNames="az-btn"
-                event={(e) => orderAZ(e)}
+                event={(e) => OrderAZ(e, setPokemons, pokemons, order)}
+              ></Button>
+              <Button
+                contentText="Megas y formas especiales"
+                classNames="az-btn center"
+                event={(e) => GetSpecialForms(setPokemons)}
               ></Button>
             </form>
             <div className="pokemons-cont center">
