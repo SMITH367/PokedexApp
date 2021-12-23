@@ -1,4 +1,5 @@
-const OrderAZ = (e, setPokemons, pokemons, order) => {
+const useOrderAZ = (e, setPokemons, pokemons, order) => {
+
     e.preventDefault();
 
     let pkmTorder = pokemons;
@@ -16,10 +17,10 @@ const OrderAZ = (e, setPokemons, pokemons, order) => {
 
         setTimeout(() => {
             setPokemons(ordenados);
-        }, 1000);
+        }, 10);
     }
 };
 
 export {
-    OrderAZ
+    useOrderAZ
 }

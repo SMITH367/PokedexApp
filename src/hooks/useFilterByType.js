@@ -1,8 +1,8 @@
 import {
     GetApi
-} from "./GetApi"
+} from "../services/GetApi"
 
-const FilterByTipe = async (type, setPokemons) => {
+const useFilterByTipe = async (type, setPokemons) => {
     setPokemons([]);
     let urlTypes = "https://pokeapi.co/api/v2/type/";
     let typesPokemon = await GetApi(urlTypes + type);
@@ -17,5 +17,5 @@ const FilterByTipe = async (type, setPokemons) => {
     setPokemons(pokemonsType);
 };
 export {
-    FilterByTipe
+    useFilterByTipe
 }

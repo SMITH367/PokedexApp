@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { GetApi } from "../services/GetApi";
-import { ChangeRegion } from "../services/ChangeRegion";
-import { FilterByTipe } from "../services/FilterByType";
-import { OrderAZ } from "../services/OrderAZ";
-import { GetSpecialForms } from "../services/GetSpecialForms";
+import { useChangeRegion } from "../hooks/useChangeRegion";
+import { useFilterByTipe } from "../hooks/useFilterByType";
+import { useOrderAZ } from "../hooks/useOrderAZ";
 import { Header } from "./UIcomponents/Header";
 import { Footer } from "./UIcomponents/Footer";
 import { Button } from "./UIcomponents/Button";
@@ -14,6 +13,10 @@ import charingPika from "./sources/charchingpikachu.gif";
 
 const Pokedex = () => {
   let url = "https://pokeapi.co/api/v2/";
+
+  const orderAZ = useOrderAZ;
+  const ChangeRegion = useChangeRegion;
+  const FilterByTipe = useFilterByTipe;
 
   const [pokemons, setPokemons] = useState([]);
   const [order, setOrder] = useState(false);
@@ -90,16 +93,17 @@ const Pokedex = () => {
                 <option value="electric">Electrico</option>
                 <option value="dark">Siniestro</option>
               </select>
-
-              <Button
-                contentText="Ordenar AZ"
-                classNames="az-btn"
-                event={(e) => OrderAZ(e, setPokemons, pokemons, order)}
-              ></Button>
               <Button
                 contentText="Megas y formas especiales"
                 classNames="az-btn center"
-                event={(e) => GetSpecialForms(setPokemons)}
+                event={(e) =>
+                  ChangeRegion("especial", setPokemons, url, setOrder)
+                }
+              ></Button>
+              <Button
+                contentText="Ordenar AZ"
+                classNames="az-btn"
+                event={(e) => orderAZ(e, setPokemons, pokemons, order)}
               ></Button>
             </form>
             <div className="pokemons-cont center">
