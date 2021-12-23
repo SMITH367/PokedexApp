@@ -19,7 +19,7 @@ const Pokedex = () => {
   const FilterByTipe = useFilterByTipe;
 
   const [pokemons, setPokemons] = useState([]);
-  const [order, setOrder] = useState(false);
+  let order = false;
 
   useEffect(() => {
     const pokemonsFirstView = async () => {
@@ -49,9 +49,7 @@ const Pokedex = () => {
               <select
                 name="selectGeneration"
                 id="selectGeneration"
-                onChange={(e) =>
-                  ChangeRegion(e.target.value, setPokemons, url, setOrder)
-                }
+                onChange={(e) => ChangeRegion(e.target.value, setPokemons, url)}
                 className="select-css"
               >
                 <option value="">Region</option>
@@ -69,9 +67,7 @@ const Pokedex = () => {
                 name="selectType"
                 id="selectType"
                 className="select-css"
-                onChange={(e) =>
-                  FilterByTipe(e.target.value, setPokemons, setOrder)
-                }
+                onChange={(e) => FilterByTipe(e.target.value, setPokemons)}
               >
                 <option value="">Tipo</option>
                 <option value="fire">Fuego</option>
@@ -96,9 +92,7 @@ const Pokedex = () => {
               <Button
                 contentText="Megas y formas especiales"
                 classNames="az-btn center"
-                event={(e) =>
-                  ChangeRegion("especial", setPokemons, url, setOrder)
-                }
+                event={(e) => ChangeRegion("especial", setPokemons, url)}
               ></Button>
               <Button
                 contentText="Ordenar AZ"

@@ -20,5 +20,13 @@
 
 
 .silver {
-    color:rgb(129, 129, 129);
+    color: rgb(129, 129, 129);
+}
+
+.purple {
+    color: rgb(140, 0, 255);
+}
+
+.rose {
+    color: rgb(255, 0, 221);
 }

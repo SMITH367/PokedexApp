@@ -5,6 +5,7 @@ import { Home } from "./Home";
 import { Pokedex } from "./Pokedex";
 import { Searchpkm } from "./Searchpkm";
 import { Viewpkm } from "./Viewpkm";
+import {Error404} from "./Error404"
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
         <Route path="/pokedex" element={<Pokedex> </Pokedex>} />
         <Route path="/search" element={<Searchpkm> </Searchpkm>} />
         <Route path="/viewPkm/:id" element={<Viewpkm> </Viewpkm>} />
-      </Routes>{" "}
+        <Route path="*" element={<Error404></Error404>}></Route>
+      </Routes>
     </HashRouter>
   );
 }
