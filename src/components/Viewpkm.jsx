@@ -5,6 +5,7 @@ import { Footer } from "./UIcomponents/Footer";
 import { GetPokemonId } from "../services/GetPokemonId";
 import { useLocation } from "react-router-dom";
 import { PaintTypes } from "./UIcomponents/UIservices/PaintTypes";
+import { Link } from "react-router-dom";
 import "./styles/viewPkm.css";
 import "./styles/drawStyles.css";
 
@@ -46,7 +47,6 @@ const Viewpkm = () => {
     // eslint-disable-next-line
   }, [pokemon]);
 
-  console.log(pokemon);
   return (
     <>
       <Header />
@@ -54,8 +54,12 @@ const Viewpkm = () => {
       <section className="mainViewPkm">
         {pokemon != null ? (
           <>
+            <Link className="toDex" to="/pokedex">
+              <p className="center">Regresar</p>
+            </Link>
+
             <article className="pokemonView center" ref={containerRef}>
-              <h1>
+              <h1 className="pkm-presentation center">
                 #{pokemon.id} {pokemon.name.toUpperCase()}
               </h1>
               <img
@@ -64,10 +68,11 @@ const Viewpkm = () => {
                 className="view-pokemon-img"
               />
             </article>
-            <aside className="main-data-pkm">
+            <h2 className="center">Informacion Basica</h2>
+            <aside className="main-data-pkm center">
               <div>
                 <h3>Types</h3>
-                <ul>
+                <ul className="center">
                   <li ref={type1} className="type-pkm">
                     {pokemon.types[0].type.name}{" "}
                   </li>
@@ -78,7 +83,7 @@ const Viewpkm = () => {
                   )}
                 </ul>
               </div>
-              <div className="stats">
+              <div className="stats center">
                 <h3>Stats</h3>
                 <p>
                   <span className="green">HP:</span>{" "}
@@ -93,7 +98,7 @@ const Viewpkm = () => {
                   {pokemon.stats[4].base_stat}{" "}
                 </p>
                 <p>
-                  <span className="blue">Defense:</span>{" "}
+                  <span className="blue">Def:</span>{" "}
                   {pokemon.stats[2].base_stat}{" "}
                 </p>
                 <p>
@@ -104,6 +109,40 @@ const Viewpkm = () => {
                   <span className="silver">Speed:</span>{" "}
                   {pokemon.stats[5].base_stat}{" "}
                 </p>
+              </div>
+              <div>
+                <h3>Habilidades</h3>
+                {pokemon.abilities.length > 1 ? (
+                  <>
+                    <p> {pokemon.abilities[0].ability.name}</p>
+                    <p>{pokemon.abilities[1].ability.name}</p>
+                    <p>Experiencia base: {pokemon.base_experience}</p>
+                  </>
+                ) : (
+                  <>
+                    <p> {pokemon.abilities[0].ability.name}</p>{" "}
+                  </>
+                )}
+              </div>
+              <div className="stats">
+                <h3>Fisico</h3>
+                <p>
+                  <span>Altura:</span> {pokemon.height}{" "}
+                </p>
+                <p>
+                  <span>Peso: </span>
+                  {pokemon.weight}
+                </p>
+              </div>
+
+              <div className="moves center">
+                <h3 className="center">Movimientos</h3>
+                <ul className="moves-cont">
+                  <li className="move center">{pokemon.moves[0].move.name} </li>
+                  <li className="move center">{pokemon.moves[1].move.name} </li>
+                  <li className="move center">{pokemon.moves[2].move.name} </li>
+                  <li className="move center">{pokemon.moves[3].move.name} </li>
+                </ul>
               </div>
             </aside>
           </>
