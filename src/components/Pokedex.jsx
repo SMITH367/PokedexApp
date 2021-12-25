@@ -49,7 +49,9 @@ const Pokedex = () => {
               <select
                 name="selectGeneration"
                 id="selectGeneration"
-                onChange={(e) => ChangeRegion(e.target.value, setPokemons, url)}
+                onChange={(e) =>
+                  ChangeRegion(e.target.value, setPokemons, url, pokemons)
+                }
                 className="select-css"
               >
                 <option value="">Region</option>
@@ -118,12 +120,6 @@ const Pokedex = () => {
                       <p>{pokemon.name}</p>
                     </div>
                   </Link>
-
-                  {/* <div className="toview-cont">
-                    <Link to={`/viewpkm/${pokemon.id}`} className="goToview">
-                      Ver
-                    </Link>
-                  </div> */}
                 </div>
               ))}
 

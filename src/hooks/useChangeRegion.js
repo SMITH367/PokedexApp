@@ -2,9 +2,9 @@ import {
     GetApi
 } from '../services/GetApi';
 
-const useChangeRegion = async (value, setPokemons, url) => {
+const useChangeRegion = async (value, setPokemons, url, pokemons) => {
 
-    setPokemons([])
+
 
     if (value === "kanto") {
         url = url + "pokemon/?offset=0&limit=151"
@@ -28,14 +28,15 @@ const useChangeRegion = async (value, setPokemons, url) => {
 
 
     let dataPokemons = await GetApi(url);
-
-    let PokemonsRegion = [];
+    let pokemonsData = []
+    setPokemons([])
 
     for (let i = 0; i < Object.keys(dataPokemons[0].results).length; i++) {
-        let pokemon = await GetApi(dataPokemons[0].results[i].url);
-        PokemonsRegion.push(pokemon[0]);
+        let pokemonD = await GetApi(dataPokemons[0].results[i].url);
+        pokemonsData.push(pokemonD[0])
     }
-    setPokemons(PokemonsRegion);
+    setPokemons(pokemonsData)
+
 
 
 }
