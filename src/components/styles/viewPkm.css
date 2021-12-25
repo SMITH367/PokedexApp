@@ -1,10 +1,16 @@
 .mainViewPkm {
-    width: 100%;
+    width: 95%;
+    margin: 1em auto;
+    border: solid red;
+    background-color: rgb(255, 254, 236);
+
+
 }
 
 .pokemonView {
 
     margin: 1em 12em;
+
 
 }
 
@@ -23,6 +29,11 @@
     border: solid 1px rgb(236, 236, 236);
     border-radius: 10px;
     padding: 20px;
+    background-image: url("../sources/pokedex.jpg");
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+
 }
 
 .main-data-pkm div {
@@ -62,13 +73,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 20px auto;
+    margin: auto;
 
 }
 
 .move {
     list-style: none;
-    padding: 5px;
+    padding: 7px;
     margin: 7px;
     margin: auto;
     border: solid 1px #fff;
@@ -82,7 +93,7 @@
     display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 760px) {
 
     .main-data-pkm div {
         width: 45%;
@@ -91,6 +102,10 @@
 
     .view-pokemon-img {
         width: 60%;
+    }
+
+    .main-data-pkm {
+        background-image: none;
     }
 
     .toDex {

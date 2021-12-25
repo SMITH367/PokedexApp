@@ -110,7 +110,7 @@ const Viewpkm = () => {
                   {pokemon.stats[5].base_stat}{" "}
                 </p>
               </div>
-              <div>
+              <div className="stats">
                 <h3>Habilidades</h3>
                 {pokemon.abilities.length > 1 ? (
                   <>
@@ -137,11 +137,26 @@ const Viewpkm = () => {
 
               <div className="moves center">
                 <h3 className="center">Movimientos</h3>
+
                 <ul className="moves-cont">
-                  <li className="move center">{pokemon.moves[0].move.name} </li>
-                  <li className="move center">{pokemon.moves[1].move.name} </li>
-                  <li className="move center">{pokemon.moves[2].move.name} </li>
-                  <li className="move center">{pokemon.moves[3].move.name} </li>
+                  {pokemon.moves.length <= 0 ? (
+                    <li className="move">No tiene movimientos</li>
+                  ) : (
+                    <>
+                      <li className="move center">
+                        {pokemon.moves[0].move.name}{" "}
+                      </li>
+                      <li className="move center">
+                        {pokemon.moves[1].move.name}{" "}
+                      </li>
+                      <li className="move center">
+                        {pokemon.moves[2].move.name}{" "}
+                      </li>
+                      <li className="move center">
+                        {pokemon.moves[3].move.name}{" "}
+                      </li>
+                    </>
+                  )}
                 </ul>
               </div>
             </aside>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/renderPkmData.css";
 import "../styles/drawStyles.css";
+import { Link } from "react-router-dom";
 import { PaintTypes } from "./UIservices/PaintTypes";
 
 const RenderPkmData = ({ data }) => {
@@ -63,6 +64,9 @@ const RenderPkmData = ({ data }) => {
                 </p>
               </aside>
             </div>
+            <Link to={`/viewpkm/${data.id}`} className="view-pkm-link">
+              Ver pokemon
+            </Link>
           </>
         )}
       </div>

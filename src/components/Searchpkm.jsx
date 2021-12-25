@@ -15,7 +15,7 @@ const Searchpkm = () => {
 
   const SearchPkmById = async (e, pokemonToSearchId) => {
     e.preventDefault();
-    console.log(pokemonToSearchId);
+
     if (lengthValidation(pokemonToSearchId)) {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemonToSearchId}`;
       const datapkm = await GetApi(url);
@@ -47,7 +47,6 @@ const Searchpkm = () => {
 
   const searchRamdom = (e) => {
     let idRamdom = String(Math.floor(Math.random() * (899 - 1)) + 1);
-    console.log(idRamdom);
     SearchPkmById(e, idRamdom);
   };
   return (

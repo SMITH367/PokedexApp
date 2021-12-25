@@ -1,6 +1,6 @@
 .pokemon-card {
     margin-top: 1em;
-    min-height: 130px;
+    min-height: 150px;
 }
 
 .container {
@@ -40,6 +40,16 @@
 
 .img-pkm {
     width: 40%;
+}
+
+.view-pkm-link {
+
+
+    background-color: red;
+    color: #fff;
+    border: solid red;
+    border-radius: 10px;
+    text-decoration: none;
 }
 
 
