@@ -2,8 +2,8 @@
 
     padding: 14px;
     margin: 1em;
-    border:none;
-    background:rgb(240, 240, 240);
+    border: none;
+    background: rgb(240, 240, 240);
 
 }
 
@@ -18,7 +18,7 @@
 
 .titleSearch {
     font-size: 2em;
-    margin:20px 0;
+    margin: 20px 0;
 }
 
 .buttonSearch {
@@ -32,7 +32,7 @@
     color: #fff;
     font-size: 1.2em;
     border: solid rgba(255, 33, 33, 0.5) 1px;
-    border-radius: 10px;
+    border-radius: 3px;
 }
 
 @media (max-width: 720px) {
