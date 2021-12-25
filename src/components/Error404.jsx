@@ -8,10 +8,10 @@ const Error404 = () => {
       <Header />
 
       <h1 className="center">
-        Uppps parece que no encontramos a ruta que buscas!
+        ¡Ooopppss parece que no encontramos a ruta que buscas!
       </h1>
       <h2 className="center">
-        <Link to="/">Sacame de aqui!</Link>
+        <Link to="/">¡Sacame de aqui!</Link>
       </h2>
     </>
   );
