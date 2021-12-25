@@ -2,6 +2,8 @@
 
 This is a very completed pokedex app.
 
+## View production build here: https://pokedexapp-67a15.firebaseapp.com/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
