@@ -1,8 +1,9 @@
 import {
     GetApi
-} from '../services/GetApi';
+} from './GetApi';
 
-const useChangeRegion = async (value, setPokemons, url, pokemons) => {
+const ChangeRegion = async (value, setPokemons, url, pokemons) => {
+
 
 
 
@@ -29,9 +30,10 @@ const useChangeRegion = async (value, setPokemons, url, pokemons) => {
 
     let dataPokemons = await GetApi(url);
     let pokemonsData = []
-    setPokemons([])
-
     for (let i = 0; i < Object.keys(dataPokemons[0].results).length; i++) {
+        if (i === 30) {
+            setPokemons([]);
+        }
         let pokemonD = await GetApi(dataPokemons[0].results[i].url);
         pokemonsData.push(pokemonD[0])
     }
@@ -43,5 +45,5 @@ const useChangeRegion = async (value, setPokemons, url, pokemons) => {
 
 
 export {
-    useChangeRegion
+    ChangeRegion
 }

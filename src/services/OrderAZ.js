@@ -1,4 +1,4 @@
-const useOrderAZ = (e, setPokemons, pokemons, order) => {
+const OrderAZ = (e, setPokemons, pokemons, order) => {
 
     e.preventDefault();
 
@@ -22,5 +22,5 @@ const useOrderAZ = (e, setPokemons, pokemons, order) => {
 };
 
 export {
-    useOrderAZ
+    OrderAZ
 }

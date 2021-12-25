@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { GetApi } from "../services/GetApi";
-import { useChangeRegion } from "../hooks/useChangeRegion";
-import { useFilterByTipe } from "../hooks/useFilterByType";
-import { useOrderAZ } from "../hooks/useOrderAZ";
+import { ChangeRegion } from "../services/ChangeRegion";
+import { FilterByTipe } from "../services/FilterByType";
+import { OrderAZ } from "../services/OrderAZ";
 import { Header } from "./UIcomponents/Header";
 import { Footer } from "./UIcomponents/Footer";
 import { Button } from "./UIcomponents/Button";
@@ -14,26 +13,11 @@ import charingPika from "./sources/charchingpikachu.gif";
 const Pokedex = () => {
   let url = "https://pokeapi.co/api/v2/";
 
-  const orderAZ = useOrderAZ;
-  const ChangeRegion = useChangeRegion;
-  const FilterByTipe = useFilterByTipe;
-
   const [pokemons, setPokemons] = useState([]);
   let order = false;
 
   useEffect(() => {
-    const pokemonsFirstView = async () => {
-      let dataKanto = await GetApi(url + "pokemon/?offset=0&limit=151");
-
-      let kantoPokemons = [];
-
-      for (let i = 0; i < Object.keys(dataKanto[0].results).length; i++) {
-        let pokemonKantoData = await GetApi(dataKanto[0].results[i].url);
-        kantoPokemons.push(pokemonKantoData[0]);
-      }
-      setPokemons(kantoPokemons);
-    };
-    pokemonsFirstView();
+    ChangeRegion("kanto", setPokemons, url);
     // eslint-disable-next-line
   }, []);
 
@@ -99,7 +83,7 @@ const Pokedex = () => {
               <Button
                 contentText="Ordenar AZ"
                 classNames="az-btn"
-                event={(e) => orderAZ(e, setPokemons, pokemons, order)}
+                event={(e) => OrderAZ(e, setPokemons, pokemons, order)}
               ></Button>
             </form>
             <div className="pokemons-cont center">
