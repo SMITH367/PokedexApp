@@ -107,20 +107,23 @@ const Pokedex = () => {
                   key={id}
                   onLoad={(e) => setBackground(pokemon.types[0].type.name, e)}
                 >
-                  <div>
-                    <h3>#{pokemon.id}</h3>
-                    <img
-                      src={pokemon.sprites.front_default}
-                      alt=""
-                      className="img-pokemon-dex"
-                    />
-                    <p>{pokemon.name}</p>
-                  </div>
-                  <div className="toview-cont">
+                  <Link to={"/viewPkm/" + pokemon.id} className="go-to-view">
+                    <div>
+                      <h3>#{pokemon.id}</h3>
+                      <img
+                        src={pokemon.sprites.front_default}
+                        alt=""
+                        className="img-pokemon-dex"
+                      />
+                      <p>{pokemon.name}</p>
+                    </div>
+                  </Link>
+
+                  {/* <div className="toview-cont">
                     <Link to={`/viewpkm/${pokemon.id}`} className="goToview">
                       Ver
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               ))}
 

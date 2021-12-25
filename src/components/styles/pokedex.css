@@ -79,15 +79,9 @@
     padding-top: 1em;
 }
 
-.goToview {
-
-    background-color: rgb(31, 57, 128);
-    color: #fff;
-    padding: 3px 10px;
-    border: solid 1px rgb(31, 57, 128);
-    border-radius: 6px;
+.go-to-view {
     text-decoration: none;
-
+    color: rgb(48, 48, 48);
 }
 
 @media (max-width: 720px) {
