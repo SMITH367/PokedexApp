@@ -32,7 +32,7 @@
     color: #fff;
     font-size: 1.2em;
     border: solid rgba(255, 33, 33, 0.5) 1px;
-    border-radius: 3px;
+    border-radius: 10px;
 }
 
 @media (max-width: 720px) {
