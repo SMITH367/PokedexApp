@@ -32,6 +32,7 @@ const Searchpkm = () => {
   const SearchPkmByName = async (e, pokemonToSearchName) => {
     e.preventDefault();
     if (lengthValidation(pokemonToSearchName)) {
+      pokemonToSearchName = pokemonToSearchName.toLowerCase();
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemonToSearchName}`;
       const datapkm = await GetApi(url);
 

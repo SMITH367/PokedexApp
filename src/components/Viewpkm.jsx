@@ -71,7 +71,7 @@ const Viewpkm = () => {
             <h2 className="center">Informacion Basica</h2>
             <aside className="main-data-pkm center">
               <div>
-                <h3>Types</h3>
+                <h3>Tipo</h3>
                 <ul className="center">
                   <li ref={type1} className="type-pkm">
                     {pokemon.types[0].type.name}{" "}
@@ -84,7 +84,7 @@ const Viewpkm = () => {
                 </ul>
               </div>
               <div className="stats center">
-                <h3>Stats</h3>
+                <h3>Estadisticas</h3>
                 <p>
                   <span className="green">HP:</span>{" "}
                   {pokemon.stats[0].base_stat}

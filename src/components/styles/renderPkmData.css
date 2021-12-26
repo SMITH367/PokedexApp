@@ -42,14 +42,22 @@
     width: 40%;
 }
 
+.view-pkm {
+
+
+    margin-top: 20px;
+
+}
+
 .view-pkm-link {
 
-
+    display: inline;
     background-color: red;
     color: #fff;
     border: solid red;
     border-radius: 5px;
     text-decoration: none;
+    margin: 30px;
 }
 
 

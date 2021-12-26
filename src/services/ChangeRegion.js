@@ -4,9 +4,6 @@ import {
 
 const ChangeRegion = async (value, setPokemons, url, pokemons) => {
 
-
-
-
     if (value === "kanto") {
         url = url + "pokemon/?offset=0&limit=151"
     } else if (value === "jhoto") {
@@ -27,20 +24,16 @@ const ChangeRegion = async (value, setPokemons, url, pokemons) => {
         url = "https://pokeapi.co/api/v2/pokemon/?offset=898&limit=220"
     }
 
-
     let dataPokemons = await GetApi(url);
     let pokemonsData = []
     for (let i = 0; i < Object.keys(dataPokemons[0].results).length; i++) {
-        if (i === 30) {
+        if (i === 20) {
             setPokemons([]);
         }
         let pokemonD = await GetApi(dataPokemons[0].results[i].url);
         pokemonsData.push(pokemonD[0])
     }
     setPokemons(pokemonsData)
-
-
-
 }
 
 

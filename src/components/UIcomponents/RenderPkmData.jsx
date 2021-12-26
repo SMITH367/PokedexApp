@@ -34,7 +34,7 @@ const RenderPkmData = ({ data }) => {
             </div>
             <div className="show-data">
               <aside>
-                <h3>Types</h3>
+                <h3>Tipo</h3>
                 <ul>
                   <li ref={type1} className="typeContent">
                     {data.types[0].type.name}
@@ -47,7 +47,7 @@ const RenderPkmData = ({ data }) => {
                 </ul>
               </aside>
               <aside className="stats">
-                <h3>Stats</h3>
+                <h3>Estadisticas</h3>
                 <p>
                   <span className="green">HP:</span> {data.stats[0].base_stat}
                 </p>
@@ -64,9 +64,11 @@ const RenderPkmData = ({ data }) => {
                 </p>
               </aside>
             </div>
-            <Link to={`/viewpkm/${data.id}`} className="view-pkm-link">
-              Ver pokemon
-            </Link>
+            <div className="view-pkm">
+              <Link to={`/viewpkm/${data.id}`} className="view-pkm-link">
+                Ver pokemon
+              </Link>
+            </div>
           </>
         )}
       </div>

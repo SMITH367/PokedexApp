@@ -22,7 +22,6 @@ const GetApi = async (url) => {
         error = err
     }
 
-
 }
 
 export {
