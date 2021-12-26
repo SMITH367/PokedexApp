@@ -77,11 +77,22 @@
 
 .toview-cont {
     padding-top: 1em;
+
 }
 
 .go-to-view {
+    background-color: rgb(30, 60, 105);
+    border: solid 1px rgb(15, 39, 75);
+    padding: 5px;
+    border-radius: 10px;
+    width: 25%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.to-view-lk {
     text-decoration: none;
-    color: rgb(48, 48, 48);
+    color: #fff;
 }
 
 @media (max-width: 720px) {
@@ -110,5 +121,9 @@
         padding: 3px;
         width: 70%;
         margin: 7px;
+    }
+
+    .go-to-view {
+        width: 35%;
     }
 }
