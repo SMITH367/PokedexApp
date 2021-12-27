@@ -81,18 +81,8 @@
 }
 
 .go-to-view {
-    background-color: rgb(30, 60, 105);
-    border: solid 1px rgb(15, 39, 75);
-    padding: 5px;
-    border-radius: 7px;
-    width: 25%;
-    margin: auto;
-    margin-top: 7px;
-}
-
-.to-view-lk {
     text-decoration: none;
-    color: #fff;
+    color: rgb(0, 2, 24);
 }
 
 @media (max-width: 720px) {
