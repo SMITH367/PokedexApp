@@ -5,6 +5,9 @@
     text-align: center;
     width: 100%;
     color: black;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
 
 }
 

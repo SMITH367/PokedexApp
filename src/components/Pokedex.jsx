@@ -101,14 +101,13 @@ const Pokedex = () => {
                   </Link>
                 </div>
               ))}
-
-              <Footer />
             </div>
           </div>
         ) : (
           <div className="charging center">
             <img src={charingPika} className="charging-img" alt="" />
             <p className="charging-text">Cargando...</p>
+            <Footer />
           </div>
         )}
       </div>

@@ -165,8 +165,6 @@ const Viewpkm = () => {
           <h2 className="center">Cargando...</h2>
         )}
       </section>
-
-      <Footer />
     </>
   );
 };

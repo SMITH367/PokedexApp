@@ -4,7 +4,6 @@ import { GetApi } from "../services/GetApi";
 import { lengthValidation } from "../services/Validations";
 import { Button } from "./UIcomponents/Button";
 import { Header } from "./UIcomponents/Header";
-import { Footer } from "./UIcomponents/Footer";
 
 import "./styles/searchPkm.css";
 
@@ -97,7 +96,6 @@ const Searchpkm = () => {
           <RenderPkmData data={dataPokemonByIdName[0]} />
         </article>
       </section>
-      <Footer />
     </>
   );
 };
