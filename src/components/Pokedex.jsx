@@ -88,11 +88,7 @@ const Pokedex = () => {
             </form>
             <div className="pokemons-cont center">
               {pokemons.map((pokemon, id) => (
-                <div
-                  className="pokemon-dex center"
-                  key={id}
-                  onLoad={(e) => setBackground(pokemon.types[0].type.name, e)}
-                >
+                <div className="pokemon-dex center" key={id}>
                   <Link to={"/viewPkm/" + pokemon.id} className="go-to-view">
                     <div>
                       <h3>#{pokemon.id}</h3>

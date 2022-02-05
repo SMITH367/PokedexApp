@@ -26,10 +26,8 @@ const ChangeRegion = async (value, setPokemons, url, pokemons) => {
 
     let dataPokemons = await GetApi(url);
     let pokemonsData = []
+    setPokemons([]);
     for (let i = 0; i < Object.keys(dataPokemons[0].results).length; i++) {
-        if (i === 20) {
-            setPokemons([]);
-        }
         let pokemonD = await GetApi(dataPokemons[0].results[i].url);
         pokemonsData.push(pokemonD[0])
     }
