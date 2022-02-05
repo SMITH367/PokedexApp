@@ -7,7 +7,6 @@ import { Footer } from "./UIcomponents/Footer";
 import { Button } from "./UIcomponents/Button";
 import { Link } from "react-router-dom";
 import "./styles/pokedex.css";
-import { setBackground } from "./UIcomponents/UIservices/setBackground";
 import charingPika from "./sources/charchingpikachu.gif";
 
 const Pokedex = () => {
