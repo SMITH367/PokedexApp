@@ -20,7 +20,7 @@ const ChangeRegion = async (value, setPokemons, url, pokemons) => {
         url = url + "pokemon/?offset=721&limit=88"
     } else if (value === "galar") {
         url = url + "pokemon/?offset=809&limit=89"
-    } else if (value === "especial") {
+    } else if (value === "special") {
         url = "https://pokeapi.co/api/v2/pokemon/?offset=898&limit=220"
     }
 

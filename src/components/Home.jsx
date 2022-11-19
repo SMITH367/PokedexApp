@@ -3,10 +3,25 @@ import { Header } from "./UIcomponents/Header";
 import { Footer } from "./UIcomponents/Footer";
 import { Button } from "./UIcomponents/Button";
 import { Link } from "react-router-dom";
+import { ChangeRegion } from "../services/ChangeRegion";
 import "./styles/home.css";
 import pikachuHome from "./sources/pikachuHome.png";
 
 const Home = () => {
+  //loading all pokemons first time
+
+  let url = "https://pokeapi.co/api/v2/";
+
+  ChangeRegion("kanto", (pkm) => {}, url);
+  ChangeRegion("jhoto", (pkm) => {}, url);
+  ChangeRegion("hoenn", (pkm) => {}, url);
+  ChangeRegion("sinnoh", (pkm) => {}, url);
+  ChangeRegion("unova", (pkm) => {}, url);
+  ChangeRegion("kalos", (pkm) => {}, url);
+  ChangeRegion("alola", (pkm) => {}, url);
+  ChangeRegion("galar", (pkm) => {}, url);
+  ChangeRegion("special", (pkm) => {}, url);
+
   return (
     <>
       <Header />
