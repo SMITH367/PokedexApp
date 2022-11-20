@@ -8,18 +8,6 @@ import "./styles/home.css";
 import pikachuHome from "./sources/pikachuHome.png";
 
 const Home = () => {
-  //loading all pokemons first time
-
-  let url = "https://pokeapi.co/api/v2/";
-
-  ChangeRegion("jhoto", (pkm) => {}, url);
-  ChangeRegion("hoenn", (pkm) => {}, url);
-  ChangeRegion("sinnoh", (pkm) => {}, url);
-  ChangeRegion("unova", (pkm) => {}, url);
-  ChangeRegion("kalos", (pkm) => {}, url);
-  ChangeRegion("alola", (pkm) => {}, url);
-  ChangeRegion("galar", (pkm) => {}, url);
-
   return (
     <>
       <Header />
