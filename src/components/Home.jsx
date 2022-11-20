@@ -8,6 +8,10 @@ import "./styles/home.css";
 import pikachuHome from "./sources/pikachuHome.png";
 
 const Home = () => {
+  //Loading the pookemon data first time
+  let url = "https://pokeapi.co/api/v2/";
+  ChangeRegion("kanto", () => {}, url);
+
   return (
     <>
       <Header />
