@@ -77,7 +77,7 @@ const Pokedex = () => {
               <Button
                 contentText="Megas y formas especiales"
                 classNames="az-btn center"
-                event={(e) => ChangeRegion("especial", setPokemons, url)}
+                event={(e) => ChangeRegion("special", setPokemons, url)}
               ></Button>
               <Button
                 contentText="Ordenar AZ"
